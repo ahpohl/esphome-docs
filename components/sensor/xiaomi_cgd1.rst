@@ -1,5 +1,5 @@
-Xiaomi LYWSD03MMC BLE Sensor
-============================
+Xiaomi CGD1 BLE Sensor
+======================
 
 .. seo::
     :description: Instructions for setting up Xiaomi Mi Jia CGD1 bluetooth-based temperature and humidity sensors in ESPHome.
