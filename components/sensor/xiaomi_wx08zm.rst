@@ -8,7 +8,7 @@ Xiaomi WX08ZM BLE Sensor
 
 The ``xiaomi_wx08zm`` sensor platform lets you track the output of the Xiaomi WX08ZM Bluetooth Low Energy device using the :doc:`/components/esp32_ble_tracker`. This component will track the tablet consumption, the sensor state (on/off) and optionally the battery level of the device every time the sensor sends out a BLE broadcast. Note that contrary to other implementations, ESPHome can track as many WX08ZM devices at once as you want.
 
-.. figure:: images/xiaomi_wx08zm-full.jpg
+.. figure:: images/xiaomi_wx08zm-full.png
     :align: center
     :width: 60.0%
 
@@ -56,13 +56,13 @@ Setting Up Devices
 ------------------
 
 To set up Xiaomi WX08ZM devices you first need to find their MAC Address so that ESPHome can
-identify them. So first, create a simple configuration without any ``xiaomi_lywsdcgq`` entries like so:
+identify them. So first, create a simple configuration without any ``xiaomi_wx08zm`` entries like so:
 
 .. code-block:: yaml
 
     esp32_ble_tracker:
 
-After uploading the ESP32 will immediately try to scan for BLE devices such as the Xiaomi LYWSDCGQ. When
+After uploading the ESP32 will immediately try to scan for BLE devices such as the Xiaomi WX08ZM. When
 it detects these sensors, it will automatically parse the BLE message print a message like this one:
 
 .. code::
@@ -75,7 +75,7 @@ it detects these sensors, it will automatically parse the BLE message print a me
 Note that it can sometimes take some time for the first BLE broadcast to be received. You can speed up
 the process by pressing the grey bluetooth button on the back of the device.
 
-Then just copy the address (``74:a3:4a:b5:07:34``) into a new ``sensor.xiaomi_xm08zm`` platform entry like
+Then just copy the address (``74:a3:4a:b5:07:34``) into a new ``sensor.xiaomi_wx08zm`` platform entry like
 in the configuration example at the top.
 
 .. note::
