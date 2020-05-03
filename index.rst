@@ -151,13 +151,7 @@ Sensor Components
     Uptime Sensor, components/sensor/uptime, timer.svg
     VL53L0x, components/sensor/vl53l0x, vl53l0x.svg
     WiFi Signal Strength, components/sensor/wifi_signal, network-wifi.svg
-    Xiaomi CGG1, components/sensor/xiaomi_cgg1, xiaomi_cgg1.jpg
-    Xiaomi HHCCJCY01, components/sensor/xiaomi_hhccjcy01, xiaomi_hhccjcy01.jpg
-    Xiaomi LYWSD02, components/sensor/xiaomi_lywsd02, xiaomi_lywsd02.jpg
-    Xiaomi LYWSDCGQ, components/sensor/xiaomi_lywsdcgq, xiaomi_lywsdcgq.jpg
-    Xiaomi LYWSD003MMC, components/sensor/xiaomi_lywsd03mmc, xiaomi_lywsd03mmc.jpg
-    Xiaomi CGD1, components/sensor/xiaomi_cgd1, xiaomi_cgd1.jpg
-    Xiaomi WX08ZM, components/sensor/xiaomi_wx08zm.jpg
+    Xiaomi BLE, components/sensor/xiaomi_ble, xiaomi_mijia_logo.jpg
     ZyAura, components/sensor/zyaura, zgm053.jpg
     Custom Sensor, components/sensor/custom, language-cpp.svg
 
