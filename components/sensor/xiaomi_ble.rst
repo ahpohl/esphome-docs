@@ -10,6 +10,57 @@ The ``xiaomi_ble`` sensor platform lets you track the output of Xiaomi Bluetooth
 
 Setting Up Devices
 ------------------
+- **mac_address** (**Required**, MAC Address): The MAC address of the Xiaomi HHCCJCY01 device.
+- **bindkey** (**Required**, Bind Key): The key to decrypt the BLE advertisements (32 characters = 16 bytes, case insensitive)
+- **temperature** (*Optional*): The information for the temperature sensor.
+
+  - **name** (**Required**, string): The name for the temperature sensor.
+  - **id** (*Optional*, :ref:`config-id`): Set the ID of this sensor for use in lambdas.
+  - All other options from :ref:`Sensor <config-sensor>`.
+
+- **humidity** (*Optional*): The information for the humidity sensor
+
+  - **name** (**Required**, string): The name for the humidity sensor.
+  - **id** (*Optional*, :ref:`config-id`): Set the ID of this sensor for use in lambdas.
+  - All other options from :ref:`Sensor <config-sensor>`.
+
+- **moisture** (*Optional*): The information for the moisture sensor
+
+  - **name** (**Required**, string): The name for the moisture sensor.
+  - **id** (*Optional*, :ref:`config-id`): Set the ID of this sensor for use in lambdas.
+  - All other options from :ref:`Sensor <config-sensor>`.
+
+- **illuminance** (*Optional*): The information for the illuminance sensor
+
+  - **name** (**Required**, string): The name for the illuminance sensor.
+  - **id** (*Optional*, :ref:`config-id`): Set the ID of this sensor for use in lambdas.
+  - All other options from :ref:`Sensor <config-sensor>`.
+
+- **conductivity** (*Optional*): The information for the soil conductivity sensor
+
+  - **name** (**Required**, string): The name for the soil conductivity sensor.
+  - **id** (*Optional*, :ref:`config-id`): Set the ID of this sensor for use in lambdas.
+  - All other options from :ref:`Sensor <config-sensor>`.
+
+- **tablet** (*Optional*): The information for the mosquito tablet resource sensor
+
+  - **name** (**Required**, string): The name for the mosquito tablet resource sensor.
+  - **id** (*Optional*, :ref:`config-id`): Set the ID of this sensor for use in lambdas.
+  - All other options from :ref:`Sensor <config-sensor>`.
+
+- **formaldehyde** (*Optional*): The information for the formaldehyde sensor
+
+  - **name** (**Required**, string): The name for the formaldehyde sensor.
+  - **id** (*Optional*, :ref:`config-id`): Set the ID of this sensor for use in lambdas.
+  - All other options from :ref:`Sensor <config-sensor>`.
+
+- **battery_level** (*Optional*): The information for the battery level sensor
+
+  - **name** (**Required**, string): The name for the battery sensor.
+  - **id** (*Optional*, :ref:`config-id`): Set the ID of this sensor for use in lambdas.
+  - All other options from :ref:`Sensor <config-sensor>`.
+
+
 
 To find the MAC Address so that ESPHome can identify the device, you can create a simple configuration without any sensor entries:
 
