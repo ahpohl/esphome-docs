@@ -88,7 +88,6 @@ Huahuacaocao Flower Care Smart Monitor, measures temperature, moisture, ambient 
 .. figure:: images/xiaomi_hhccjcy01.jpg
     :align: left
     :width: 30.0%
-    Xiaomi MiFlora (HHCCJCY01)
 
 .. code-block:: yaml
 
