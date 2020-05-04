@@ -35,6 +35,8 @@ Blog Posts & Videos
 - `ESPHome MP3 Sound Machine <https://selfhostedhome.com/esp8266-mp3-sound-machine/>`__ by `Self Hosted Home <https://selfhostedhome.com>`__
 - `ESP32 Camera+ESP8266 PIR <https://www.dopebuild.com/i-am-sorry-dave-i-am-unable-to-do-that/>`__ by `Dave Richer <https://dopebuild.com/>`__
 - `Detecting Sound with ESP8266 <https://thibmaek.com/post/detecting-sound-level-using-esp8266-and-esphome>`__ by `Thibault Maekelbergh <https://thibmaek.com>`__
+- `SW420 Vibration Sensor with Remote Notifications <https://github.com/rmooreID/Home-Assistant-Appliance-Monitor/>`__ by :ghuser:`rmooreID`
+- `DIY Irrigation Controller (with Internal Scheduler + Lovelace UI) <https://brianhanifin.com/posts/diy-irrigation-controller-esphome-home-assistant/>`__ by :ghuser:`BrianHanifin`
 
 Custom Components & Code
 ------------------------
@@ -57,6 +59,8 @@ Custom Components & Code
 - `LINP-Doorbell-g03 Custom Component <https://github.com/pauln/esphome-linp-doorbell-g03>`__ by :ghuser:`pauln`
 - `ESPHome <-> Homebridge <https://www.npmjs.com/package/homebridge-esphome>`__ by `basdelfos <https://www.npmjs.com/~basdelfos>`__
 - `Custom ESPHome for Wofea V10 Alarm <https://github.com/nbergont/wofea_v10_hack>`__ by :ghuser:`nbergont`
+- `Custom Smart meter P1 port reader <https://github.com/nldroid/CustomP1UartComponent>`__ by :ghuser:`nldroid`
+- `Custom Mitsubishi HVAC HeatPump control using UART <https://github.com/geoffdavis/esphome-mitsubishiheatpump>`__ by :ghuser:`geoffdavis`
 
 Sample Configurations
 ---------------------
@@ -76,3 +80,6 @@ Sample Configurations
 - `ESPHome with MakerLife Weather Station Kit <https://github.com/mkuoppa/esphomeweatherstation>`__ by :ghuser:`mkuoppa`
 - `ESPHome DIY Multisensor Cat Feeder <https://github.com/335iguy/diy-multisensor-cat-feeder>`__ by :ghuser:`335iguy`
 - `ESPHome config for Universal IR Remote ZJ-A1 (russian) <https://kvvhost.ru/2019/10/30/review-firmware-zj-a1-ir-remote/>`__ by `kvvhost <https://kvvhost.ru/>`__
+- `ESPHome Home Assistant Cheap Cat Feeder <https://github.com/rubengargar/diy-cheap-cat-feeder>`__ by :ghuser:`rubengargar`
+- `ESPHome configs <https://github.com/nuttytree/ESPHome-Devices>`__ by :ghuser:`nuttytree`
+- `ESPHome Home Assistant stepper motor blinds/curtain <https://github.com/icarome/esphome/blob/master/cortina.yaml>`__ by :ghuser:`icarome`
