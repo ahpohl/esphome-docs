@@ -61,7 +61,6 @@ Setting Up Devices
   - All other options from :ref:`Sensor <config-sensor>`.
 
 
-
 To find the MAC Address so that ESPHome can identify the device, you can create a simple configuration without any sensor entries:
 
 .. code-block:: yaml
@@ -87,8 +86,8 @@ MiFlora (HHCCJCY01)
 Huahuacaocao Flower Care Smart Monitor, measures temperature, moisture, ambient light and nutrient levels in the soil.
 
 .. figure:: images/xiaomi_hhccjcy01.jpg
-    :align: center
-    :width: 60.0%
+    :align: left
+    :width: 30.0%
     Xiaomi MiFlora (HHCCJCY01)
 
 .. code-block:: yaml
@@ -318,7 +317,7 @@ Broadcasts if the light has been activated, default timeout is 5s.
 Obtaining the bindkey
 ---------------------
 
-To set up an encrypted device such as the LYWSD03MMC or CGD1, you first need to obain the bind key. The ``xiaomi_ble`` sensor component is not able to automatically generate a bind key, so you need to use the original Mi Home app to add the sensor once. While adding the device, a new key is generated and uploaded into the Xiaomi cloud and to the device itself. Currently a chinese server needs to be selected as the rest of the world doesn't support most of these devices yet. Once generated, the key will not change again until the device is removed and re-added in the Xiaomi app.
+To set up an encrypted device such as the LYWSD03MMC or CGD1, you first need to obain the bind key. The ``xiaomi_ble`` sensor component is not able to automatically generate a bind key, so you need to use the original Mi Home app to add the sensor once (there are `efforts <https://github.com/danielkucera/mi-standardauth>`__ to generate a bindkey without the need for packet sniffing, but it's not working correctly yet). While adding the device, a new key is generated and uploaded into the Xiaomi cloud and to the device itself. Currently a chinese server needs to be selected as the rest of the world doesn't support most of these devices yet. Once generated, the key will not change again until the device is removed and re-added in the Xiaomi app.
 
 In order to obtain the bind key, a SSL packet sniffer needs to be setup on either an Android phone or the
 iPhone. A good choice for Android is the `Remote PCAP <https://play.google.com/store/apps/details?id=com.egorovandreyrm.pcapremote&hl=en>`__ app in combination with Wireshark. A tutorial on how to setup the Remote PCAP packet sniffer can be found `here <https://egorovandreyrm.com/pcap-remote-tutorial/>`__. More info including some instructions for the iPhone are `here <https://github.com/custom-components/sensor.mitemp_bt/blob/master/faq.md#my-sensors-ble-advertisements-are-encrypted-how-can-i-get-the-key>`__. Once the traffic between the Mi Home app and the Xiaomi has been recorded, the bind key will show in clear text:
@@ -342,5 +341,6 @@ See Also
   by `@Magalex2x14 <https://github.com/Magalex2x14>`__
 - More info on the bind key `<https://github.com/custom-components/sensor.mitemp_bt/blob/master/faq.md#my-sensors-ble-advertisements-are-encrypted-how-can-i-get-the-key>`__
 - Xiaomi LYWSD03MMC passive sensor readout `<https://github.com/ahpohl/xiaomi_lywsd03mmc>`__ by `@ahpohl <https://github.com/ahpohl>`__
+- Mi-standardauth: bindkey generation and upload `<https://github.com/danielkucera/mi-standardauth>`__
 
 - :ghedit:`Edit`
