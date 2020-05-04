@@ -1,5 +1,5 @@
-Xiaomi Mi Home (Mijia) BLE Sensors
-==================================
+Xiaomi Mijia BLE Sensors
+========================
 
 .. seo::
     :description: Instructions for setting up Xiaomi Mi Home (Mijia) bluetooth-based sensors in ESPHome.
@@ -8,86 +8,18 @@ Xiaomi Mi Home (Mijia) BLE Sensors
 
 The ``xiaomi_ble`` sensor platform lets you track the output of Xiaomi Bluetooth Low Energy devices using the :doc:`/components/esp32_ble_tracker`. This component will track, for example, the temperature, humidity, moisture, conductivity, illuminance, formaldehyde, mosquito tablet and battery level of the device every time the sensor sends out a BLE broadcast. Contrary to other implementations, ``xiaomi_ble`` listense passively to advertisement packets and does not pair with the device. Hence ESPHome has no impact on battery life.
 
-Setting Up Devices
-------------------
-- **mac_address** (**Required**, MAC Address): The MAC address of the Xiaomi HHCCJCY01 device.
-- **bindkey** (**Required**, Bind Key): The key to decrypt the BLE advertisements (32 characters = 16 bytes, case insensitive)
-- **temperature** (*Optional*): The information for the temperature sensor.
-
-  - **name** (**Required**, string): The name for the temperature sensor.
-  - **id** (*Optional*, :ref:`config-id`): Set the ID of this sensor for use in lambdas.
-  - All other options from :ref:`Sensor <config-sensor>`.
-
-- **humidity** (*Optional*): The information for the humidity sensor
-
-  - **name** (**Required**, string): The name for the humidity sensor.
-  - **id** (*Optional*, :ref:`config-id`): Set the ID of this sensor for use in lambdas.
-  - All other options from :ref:`Sensor <config-sensor>`.
-
-- **moisture** (*Optional*): The information for the moisture sensor
-
-  - **name** (**Required**, string): The name for the moisture sensor.
-  - **id** (*Optional*, :ref:`config-id`): Set the ID of this sensor for use in lambdas.
-  - All other options from :ref:`Sensor <config-sensor>`.
-
-- **illuminance** (*Optional*): The information for the illuminance sensor
-
-  - **name** (**Required**, string): The name for the illuminance sensor.
-  - **id** (*Optional*, :ref:`config-id`): Set the ID of this sensor for use in lambdas.
-  - All other options from :ref:`Sensor <config-sensor>`.
-
-- **conductivity** (*Optional*): The information for the soil conductivity sensor
-
-  - **name** (**Required**, string): The name for the soil conductivity sensor.
-  - **id** (*Optional*, :ref:`config-id`): Set the ID of this sensor for use in lambdas.
-  - All other options from :ref:`Sensor <config-sensor>`.
-
-- **tablet** (*Optional*): The information for the mosquito tablet resource sensor
-
-  - **name** (**Required**, string): The name for the mosquito tablet resource sensor.
-  - **id** (*Optional*, :ref:`config-id`): Set the ID of this sensor for use in lambdas.
-  - All other options from :ref:`Sensor <config-sensor>`.
-
-- **formaldehyde** (*Optional*): The information for the formaldehyde sensor
-
-  - **name** (**Required**, string): The name for the formaldehyde sensor.
-  - **id** (*Optional*, :ref:`config-id`): Set the ID of this sensor for use in lambdas.
-  - All other options from :ref:`Sensor <config-sensor>`.
-
-- **battery_level** (*Optional*): The information for the battery level sensor
-
-  - **name** (**Required**, string): The name for the battery sensor.
-  - **id** (*Optional*, :ref:`config-id`): Set the ID of this sensor for use in lambdas.
-  - All other options from :ref:`Sensor <config-sensor>`.
-
-
-To find the MAC Address so that ESPHome can identify the device, you can create a simple configuration without any sensor entries:
-
-.. code-block:: yaml
-
-    esp32_ble_tracker:
-
-After uploading the ESP32 will immediately try to scan for BLE devices. When it detects a new sensor, it will automatically parse the BLE message print a message like this one:
-
-.. code::
-
-    Found device A4:C1:38:4E:16:78 RSSI=-78
-      Address Type: PUBLIC
-      Name: 'LYWSD03MMC'
-
-It can sometimes take some time for the first BLE broadcast to be received. Once the device has been found, copy the address (``A4:C1:38:4E:16:78``) into a new platform entry like shown below.
-
-
-Supported devices
+Supported Devices
 -----------------
 
-MiFlora (HHCCJCY01)
-^^^^^^^^^^^^^^^^^^^
-Huahuacaocao Flower Care Smart Monitor, measures temperature, moisture, ambient light and nutrient levels in the soil.
+HHCCJCY01
+*********
+MiFlora, Huahuacaocao, measures temperature, moisture, ambient light and nutrient levels in the soil.
 
 .. figure:: images/xiaomi_hhccjcy01.jpg
-    :align: left
-    :width: 30.0%
+    :align: center
+    :width: 60.0%
+
+Configuration example:
 
 .. code-block:: yaml
 
@@ -105,14 +37,15 @@ Huahuacaocao Flower Care Smart Monitor, measures temperature, moisture, ambient 
         battery_level:
           name: "Xiaomi HHCCJCY01 Battery Level"
 
-
-VegTrug Grow Care Garden (GCLS002)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Takasho, outside, the VegTrug is similar to the MiFlora.
+GCLS002
+*******
+VegTrug Grow Care Garden, Takasho, suitable for outside, similar to the MiFlora.
 
 .. figure:: images/xiaomi_gcls002.jpg
-    :align: left
+    :align: center
     :width: 30.0%
+
+Configuration example:
 
 .. code-block:: yaml
 
@@ -128,14 +61,15 @@ Takasho, outside, the VegTrug is similar to the MiFlora.
         illuminance:
           name: "GCLS02 Illuminance"
 
-
-FlowerPot (HHCCPOT002)
-^^^^^^^^^^^^^^^^^^^^^^
-Huahuacaocao Smart Flower Pot, RoPot, broadcasts moisture and conductivity
+HHCCPOT002
+**********
+FlowerPot, Huahuacaocao, RoPot, broadcasts moisture and conductivity
 
 .. figure:: images/xiaomi_hhccpot002.jpg
-    :align: left
+    :align: center
     :width: 30.0%
+
+Configuration example:
 
 .. code-block:: yaml
 
@@ -147,14 +81,15 @@ Huahuacaocao Smart Flower Pot, RoPot, broadcasts moisture and conductivity
         conductivity:
           name: "HHCCPOT002 Soil Conductivity"
 
-
-Hygro thermometer (LYWSDCGQ)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-round body, segment LCD, broadcasts temperature, humidity and battery level.
+LYWSDCGQ
+********
+Hygro thermometer, round body, segment LCD, broadcasts temperature, humidity and battery level.
 
 .. figure:: images/xiaomi_lywsdcgq.jpg
-    :align: left
+    :align: center
     :width: 30.0%
+
+Configuration example:
 
 .. code-block:: yaml
 
@@ -168,14 +103,15 @@ round body, segment LCD, broadcasts temperature, humidity and battery level.
         battery_level:
           name: "LYWSDCGQ Battery Level"
 
-
-Hygro thermometer (LYWSD02)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-rectangular body, e-ink display, broadcasts temperature and humidity values, no battery status
+LYWSD02
+*******
+Hygro thermometer, rectangular body, e-ink display, broadcasts temperature and humidity values, no battery status
 
 .. figure:: images/xiaomi_lywsd02.jpg
-    :align: left
+    :align: center
     :width: 30.0%
+
+Configuration example:
 
 .. code-block:: yaml
 
@@ -187,14 +123,15 @@ rectangular body, e-ink display, broadcasts temperature and humidity values, no 
         humidity:
           name: "LYWSD02 Humidity"
 
-
-Hygro thermometer (CGG1)
-^^^^^^^^^^^^^^^^^^^^^^^^
-round body, e-ink display
+CGG1
+****
+Hygro thermometer, round body, e-ink display
 
 .. figure:: images/xiaomi_cgg1.jpg
-    :align: left
+    :align: center
     :width: 30.0%
+
+Configuration example:
 
 .. code-block:: yaml
 
@@ -208,13 +145,15 @@ round body, e-ink display
         battery_level:
           name: "CGG1 Battery Level"
 
-Hygro thermometer (LYWSD03MMC)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-small square body, segment LCD, encrypted, broadcasts temperature, humidity and battery status. Requires a bindkey in order to decrypt the received data (see below).
+LYWSD03MMC
+**********
+Hygro thermometer, small square body, segment LCD, encrypted, broadcasts temperature, humidity and battery status. Requires a bindkey in order to decrypt the received data (see below).
 
 .. figure:: images/xiaomi_lywsd03mmc.jpg
-    :align: left
+    :align: center
     :width: 30.0%
+
+Configuration example:
 
 .. code-block:: yaml
 
@@ -229,14 +168,15 @@ small square body, segment LCD, encrypted, broadcasts temperature, humidity and 
         battery_level:
           name: "LYWSD03MMC Battery Level"
 
-
-Cleargrass (Qingping) alarm clock (CGD1)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-segment LCD, encrypted, broadcasts temperature, humidity and battery status. Requires a bindkey in order to decrypt the received data (see below).
+CGD1
+****
+Cleargrass (Qingping) alarm clock, segment LCD, encrypted, broadcasts temperature, humidity and battery status. Requires a bindkey in order to decrypt the received data (see below).
 
 .. figure:: images/xiaomi_cgd1.jpg
-    :align: left
+    :align: center
     :width: 30.0%
+
+Configuration example:
 
 .. code-block:: yaml
 
@@ -251,14 +191,15 @@ segment LCD, encrypted, broadcasts temperature, humidity and battery status. Req
         battery_level:
           name: "CGD1 Battery Level"
 
-
-Xiaomi Honeywell formaldehyde sensor (JQJCY01YM)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-OLED display, broadcasts temperature, humidity, formaldehyde concentration (mg/m³) and battery status. 
+JQJCY01YM
+*********
+Xiaomi (Honeywell) formaldehyde sensor, OLED display, broadcasts temperature, humidity, formaldehyde concentration (mg/m³) and battery status. 
 
 .. figure:: images/xiaomi_jqjcy01ym.jpg
-    :align: left
+    :align: center
     :width: 30.0%
+
+Configuration example:
 
 .. code-block:: yaml
 
@@ -274,14 +215,15 @@ OLED display, broadcasts temperature, humidity, formaldehyde concentration (mg/m
         battery_level:
           name: "JQJCY01YM Battery Level"
 
-
-Mosquito Repellent Smart Version (WX08ZM)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Broadcasts the tablet resource level, on/off state and battery level.
+WX08ZM
+******
+Mosquito Repellent Smart Version, broadcasts the tablet resource level, on/off state and battery level.
 
 .. figure:: images/xiaomi_wx08zm.jpg
-    :align: left
+    :align: center
     :width: 30.0%
+
+Configuration example:
 
 .. code-block:: yaml
 
@@ -295,31 +237,65 @@ Broadcasts the tablet resource level, on/off state and battery level.
         battery_level:
           name: "WX08ZM Battery Level"
 
-
-Xiaomi Philips BLE nightlight (MUE4094RT)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Broadcasts if the light has been activated, default timeout is 5s.
+MUE4094RT
+*********
+Xiaomi Philips BLE night light, broadcasts if the light has been activated, default timeout is 5s.
 
 .. figure:: images/xiaomi_mue4094rt.jpg
-    :align: left
+    :align: center
     :width: 30.0%
+
+Configuration example:
 
 .. code-block:: yaml
 
     binary_sensor:
       - platform: xiaomi_mue4094rt
-        name: "MUE4094RT Nightlight"
+        name: "MUE4094RT Night Light"
         mac_address: "7A:80:8E:19:36:BA"
         timeout: "5s"
 
+Setting Up Devices
+------------------
 
-Obtaining the bindkey
+Required:
+
+- **mac_address** (MAC Address): The MAC address of the device.
+- **bindkey** (string, 32 characters, case insensitive): The key to decrypt the BLE advertisements for encrypted sensor types
+
+Optional with **name**, **id** (:ref:`config-id`) and all other options from :ref:`Sensor <config-sensor>`:
+
+- **temperature**
+- **humidity**
+- **moisture**
+- **illuminance**
+- **conductivity**
+- **tablet**
+- **formaldehyde**
+- **battery_level**
+
+To find the MAC Address so that ESPHome can identify the device, you can create a simple configuration without any sensor entries:
+
+.. code-block:: yaml
+
+    esp32_ble_tracker:
+
+After uploading, the ESP32 will immediately try to scan for BLE devices. When it detects a new sensor, it will automatically parse the BLE message print a message like this one:
+
+.. code::
+
+    Found device A4:C1:38:4E:16:78 RSSI=-78
+      Address Type: PUBLIC
+      Name: 'LYWSD03MMC'
+
+It can sometimes take some time for the first BLE broadcast to be received. Once the device has been found, copy the address ``A4:C1:38:4E:16:78`` into a new platform entry like shown in the example configurations.
+
+Obtaining The Bindkey
 ---------------------
 
 To set up an encrypted device such as the LYWSD03MMC or CGD1, you first need to obain the bind key. The ``xiaomi_ble`` sensor component is not able to automatically generate a bind key, so you need to use the original Mi Home app to add the sensor once (there are `efforts <https://github.com/danielkucera/mi-standardauth>`__ to generate a bindkey without the need for packet sniffing, but it's not working correctly yet). While adding the device, a new key is generated and uploaded into the Xiaomi cloud and to the device itself. Currently a chinese server needs to be selected as the rest of the world doesn't support most of these devices yet. Once generated, the key will not change again until the device is removed and re-added in the Xiaomi app.
 
-In order to obtain the bind key, a SSL packet sniffer needs to be setup on either an Android phone or the
-iPhone. A good choice for Android is the `Remote PCAP <https://play.google.com/store/apps/details?id=com.egorovandreyrm.pcapremote&hl=en>`__ app in combination with Wireshark. A tutorial on how to setup the Remote PCAP packet sniffer can be found `here <https://egorovandreyrm.com/pcap-remote-tutorial/>`__. More info including some instructions for the iPhone are `here <https://github.com/custom-components/sensor.mitemp_bt/blob/master/faq.md#my-sensors-ble-advertisements-are-encrypted-how-can-i-get-the-key>`__. Once the traffic between the Mi Home app and the Xiaomi has been recorded, the bind key will show in clear text:
+In order to obtain the bind key, a SSL packet sniffer needs to be setup on either an Android phone or the iPhone. A good choice for Android is the `Remote PCAP <https://play.google.com/store/apps/details?id=com.egorovandreyrm.pcapremote&hl=en>`__ in combination with `Wireshark <https://www.wireshark.org/>`__. A tutorial on how to setup the Remote PCAP packet sniffer can be found `here <https://egorovandreyrm.com/pcap-remote-tutorial/>`__. Instructions how to obtain the key using an iPhone are `here <https://github.com/custom-components/sensor.mitemp_bt/blob/master/faq.md#my-sensors-ble-advertisements-are-encrypted-how-can-i-get-the-key>`__. Once the traffic between the Mi Home app and the Xiaomi has been recorded, the bind key will show in clear text:
 
 .. code-block:: yaml
 
@@ -338,8 +314,7 @@ See Also
 - :apiref:`xiaomi_lywsd03mmc/xiaomi_ble.h`
 - Xiaomi Home Assistant mitemp_bt custom component `<https://github.com/custom-components/sensor.mitemp_bt>`__
   by `@Magalex2x14 <https://github.com/Magalex2x14>`__
-- More info on the bind key `<https://github.com/custom-components/sensor.mitemp_bt/blob/master/faq.md#my-sensors-ble-advertisements-are-encrypted-how-can-i-get-the-key>`__
 - Xiaomi LYWSD03MMC passive sensor readout `<https://github.com/ahpohl/xiaomi_lywsd03mmc>`__ by `@ahpohl <https://github.com/ahpohl>`__
-- Mi-standardauth: bindkey generation and upload `<https://github.com/danielkucera/mi-standardauth>`__
+- Mi-standardauth `<https://github.com/danielkucera/mi-standardauth>`__
 
 - :ghedit:`Edit`

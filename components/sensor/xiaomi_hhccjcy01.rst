@@ -1,3 +1,3 @@
-HHCCJCY01 moved to xiaomi_ble
+HHCCJCY01 Moved To Xiaomi BLE
 =============================
 

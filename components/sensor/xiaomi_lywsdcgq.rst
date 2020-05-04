@@ -1,3 +1,3 @@
-LYWSDCGQ moved to xiaomi_ble
+LYWSDCGQ Moved To Xiaomi BLE
 ============================
 
