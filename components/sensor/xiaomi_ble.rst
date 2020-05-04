@@ -218,7 +218,7 @@ small square body, segment LCD, encrypted, broadcasts temperature, humidity and 
 
 .. code-block:: yaml
 
-sensor:
+    sensor:
       - platform: xiaomi_lywsd03mmc
         mac_address: "A4:C1:38:B1:CD:7F"
         bindkey: "eef418daf699a0c188f3bfd17e4565d9"
