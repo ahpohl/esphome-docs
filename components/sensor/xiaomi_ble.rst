@@ -251,6 +251,7 @@ Configuration example:
 
     binary_sensor:
       - platform: xiaomi_mue4094rt
+        device_class: motion
         name: "MUE4094RT Night Light"
         mac_address: "7A:80:8E:19:36:BA"
         timeout: "5s"
