@@ -239,7 +239,7 @@ Configuration example:
 
 MUE4094RT
 *********
-Xiaomi Philips BLE night light, broadcasts if the light has been activated, default timeout is 5s.
+Xiaomi Philips BLE night light, broadcasts motion detection (detected/clear, on/off), default timeout is 5s.
 
 .. figure:: images/xiaomi_mue4094rt.jpg
     :align: center
