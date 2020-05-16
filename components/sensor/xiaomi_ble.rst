@@ -217,7 +217,7 @@ Configuration example:
 
 WX08ZM
 ******
-Mosquito Repellent Smart Version, broadcasts the tablet resource level, on/off state and battery level.
+Mosquito Repellent Smart Version, broadcasts the tablet resource level, on/off state and battery level, implemented as a hybrid sensor, needs both ``sensor`` and ``binary_sensor`` in config.
 
 .. figure:: images/xiaomi_wx08zm.jpg
     :align: center
@@ -228,12 +228,12 @@ Configuration example:
 .. code-block:: yaml
 
     sensor:
+
+    binary_sensor:
       - platform: xiaomi_wx08zm
         mac_address: "74:a3:4a:b5:07:34"
         tablet:
           name: "WX08ZM Mosquito Tablet"
-        state:
-          name: "WX08ZM On/Off State"
         battery_level:
           name: "WX08ZM Battery Level"
 
