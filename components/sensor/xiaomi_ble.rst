@@ -147,7 +147,7 @@ Configuration example:
 
 LYWSD03MMC
 **********
-Hygro thermometer, small square body, segment LCD, encrypted, broadcasts temperature, humidity and battery status. Requires a bindkey in order to decrypt the received data (see below).
+Hygro thermometer, small square body, segment LCD, encrypted, broadcasts temperature, humidity and battery status. Requires a bindkey in order to decrypt the received data (see :ref:`below<Obtaining The Bindkey>`).
 
 .. figure:: images/xiaomi_lywsd03mmc.jpg
     :align: center
@@ -170,7 +170,7 @@ Configuration example:
 
 CGD1
 ****
-Cleargrass (Qingping) alarm clock, segment LCD, encrypted, broadcasts temperature, humidity and battery status. Requires a bindkey in order to decrypt the received data (see below).
+Cleargrass (Qingping) alarm clock, segment LCD, encrypted, broadcasts temperature, humidity and battery status. Requires a bindkey in order to decrypt the received data (see :ref:`below<Obtaining The Bindkey>`).
 
 .. figure:: images/xiaomi_cgd1.jpg
     :align: center
@@ -239,7 +239,7 @@ Configuration example:
 
 MUE4094RT
 *********
-Xiaomi Philips BLE night light, broadcasts motion detection (detected/clear, on/off), default timeout is 5s.
+Xiaomi Philips BLE night light, broadcasts motion detection (detected/clear, on/off), default timeout is 5s. Hybrid sensor between a ``sensor`` and ``binary_sensor`` component. Configuration needs therefore both entries.
 
 .. figure:: images/xiaomi_mue4094rt.jpg
     :align: center
@@ -249,12 +249,39 @@ Configuration example:
 
 .. code-block:: yaml
 
+    sensor:
+
     binary_sensor:
       - platform: xiaomi_mue4094rt
-        device_class: motion
         name: "MUE4094RT Night Light"
         mac_address: "7A:80:8E:19:36:BA"
         timeout: "5s"
+
+MJYD02YL-A
+**********
+Xiaomi Yeelight BLE night light, in-shape replacement of MJYD02YL with BLE support, broadcasts light on/off status, motion detection, idle time since last motion event and the battery status. Requires a bindkey in order to decrypt the received data (see :ref:`below<Obtaining The Bindkey>`). Hybrid sensor between a ``sensor`` and ``binary_sensor`` component. Configuration needs therefore both entries.
+
+.. figure:: images/xiaomi_mjyd02yla.jpg
+    :align: center
+    :width: 30.0%
+
+Configuration example:
+
+.. code-block:: yaml
+
+    sensor:
+
+    binary_sensor:
+      - platform: xiaomi_mjyd02yla
+        name: "MJYD02YL-A Night Light"
+        mac_address: "50:EC:50:CD:32:02"
+        bindkey: "48403ebe2d385db8d0c187f81e62cb64"
+        idle_time:
+          name: "MJYD02YL-A Idle Time"
+        light:
+          name: "MJYD02YL-A Light Status"
+        battery_level:
+          name: "MJYD02YL-A Battery Level"
 
 Setting Up Devices
 ------------------
