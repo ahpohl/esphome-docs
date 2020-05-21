@@ -45,12 +45,14 @@ Configuration variables:
   decoding process. Defaults to ``25%``.
 - **buffer_size** (*Optional*, int): The size of the internal buffer for storing the remote codes. Defaults to ``10kb``
   on the ESP32 and ``1kb`` on the ESP8266.
+- **memory_blocks** (*Optional*, int): The number of RMT memory blocks used. Only used on ESP32 platfrom. Defaults to
+  ``3``.
 - **filter** (*Optional*, :ref:`time <config-time>`): Filter any pulses that are shorter than this. Useful for removing
   glitches from noisy signals. Defaults to ``10us``.
 - **idle** (*Optional*, :ref:`time <config-time>`): The amount of time that a signal should remain stable (i.e. not
   change) for it to be considered complete. Defaults to ``10ms``.
 - **id** (*Optional*, :ref:`config-id`): Manually specify the ID used for code generation. Use this if you have
-  multiple remote transmitters.
+  multiple remote receivers.
 
 Automations:
 
