@@ -147,7 +147,7 @@ Configuration example:
 
 LYWSD03MMC
 **********
-Hygro thermometer, small square body, segment LCD, encrypted, broadcasts temperature, humidity and battery status. Requires a bindkey in order to decrypt the received data (see :ref:`below<Obtaining The Bindkey>`).
+Hygro thermometer, small square body, segment LCD, encrypted, broadcasts temperature, humidity and battery status. Requires a bindkey in order to decrypt the received data (see :ref:`obtaining_the_bindkey`).
 
 .. figure:: images/xiaomi_lywsd03mmc.jpg
     :align: center
@@ -170,7 +170,7 @@ Configuration example:
 
 CGD1
 ****
-Cleargrass (Qingping) alarm clock, segment LCD, encrypted, broadcasts temperature, humidity and battery status. Requires a bindkey in order to decrypt the received data (see :ref:`below<Obtaining The Bindkey>`).
+Cleargrass (Qingping) alarm clock, segment LCD, encrypted, broadcasts temperature, humidity and battery status. Requires a bindkey in order to decrypt the received data (see :ref:`obtaining_the_bindkey`).
 
 .. figure:: images/xiaomi_cgd1.jpg
     :align: center
@@ -259,7 +259,7 @@ Configuration example:
 
 MJYD02YL-A
 **********
-Xiaomi Yeelight BLE night light, in-shape replacement of MJYD02YL with BLE support, broadcasts light on/off status, motion detection, idle time since last motion event and the battery status. Requires a bindkey in order to decrypt the received data (see :ref:`below<Obtaining The Bindkey>`). Hybrid sensor between a ``sensor`` and ``binary_sensor`` component. Configuration needs therefore both entries.
+Xiaomi Yeelight BLE night light, in-shape replacement of MJYD02YL with BLE support, broadcasts light on/off status, motion detection, idle time since last motion event and the battery status. Requires a bindkey in order to decrypt the received data (see :ref:`obtaining_the_bindkey`). Hybrid sensor between a ``sensor`` and ``binary_sensor`` component. Configuration needs therefore both entries.
 
 .. figure:: images/xiaomi_mjyd02yla.jpg
     :align: center
@@ -318,7 +318,7 @@ After uploading, the ESP32 will immediately try to scan for BLE devices. When it
 
 It can sometimes take some time for the first BLE broadcast to be received. Once the device has been found, copy the address ``A4:C1:38:4E:16:78`` into a new platform entry like shown in the example configurations.
 
-.. _RST Obtaining The Bindkey:
+.. _obtaining_the_bindkey:
 
 Obtaining The Bindkey
 ---------------------
