@@ -318,6 +318,8 @@ After uploading, the ESP32 will immediately try to scan for BLE devices. When it
 
 It can sometimes take some time for the first BLE broadcast to be received. Once the device has been found, copy the address ``A4:C1:38:4E:16:78`` into a new platform entry like shown in the example configurations.
 
+.. _RST Obtaining The Bindkey:
+
 Obtaining The Bindkey
 ---------------------
 
