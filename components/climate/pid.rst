@@ -3,7 +3,7 @@ PID Climate
 
 .. seo::
     :description: Instructions for setting up PID climate controllers with ESPHome.
-    :image: function.png
+    :image: function.svg
 
 The ``pid`` climate platform allows you to regulate a value with a
 `PID controller <https://en.wikipedia.org/wiki/PID_controller>`__.
@@ -65,7 +65,7 @@ To set up a PID climate controller, you need a couple of components:
 
 - A :ref:`Sensor <config-sensor>` to read the current temperature (``sensor``).
 - At least one :ref:`float output <config-output>` to drive for heating or cooling (or both).
-  This could for example be a PWM output via ``slow_pwm`` (TODO) that drives a heating unit.
+  This could for example be a PWM output via :doc:`/components/output/slow_pwm` that drives a heating unit.
 
   Please note the output *must* be controllable with continuous value (not only ON/OFF, but any state
   in between for example 50% heating power).
@@ -124,7 +124,7 @@ is automatically calculated.
 
 But this also means you **have to set the setpoint** of the climate controller to a value the
 device can reach. For example if the temperature of a room is to be controlled, the setpoint needs
-to be a bit of the ambient temperature. If the ambient temperature is 20°C, the setpoint of the
+to be above the ambient temperature. If the ambient temperature is 20°C, the setpoint of the
 climate device should be set to at least ~24°C so that an oscillation can be induced.
 
 4. Set an appropriate setpoint (see above).
@@ -215,8 +215,8 @@ Configuration variables:
 ``climate.pid.set_control_parameters`` Action
 ---------------------------------------------
 
-This action sets new values for the control parameters of the PID controller. This can be 
-used to manually tune the PID controller. Make sure to take update the values you want on 
+This action sets new values for the control parameters of the PID controller. This can be
+used to manually tune the PID controller. Make sure to take update the values you want on
 the YAML file! They will reset on the next reboot.
 
 .. code-block:: yaml
@@ -247,14 +247,14 @@ conditions to avoid the control loop to overshoot (or undershoot) a target.
 
     on_...:
       # Basic
-      - climate.pid.reset_integral_term: pid_climate     
+      - climate.pid.reset_integral_term: pid_climate
 
 Configuration variables:
 
 - **id** (**Required**, :ref:`config-id`): ID of the PID Climate being reset.
 
-PID Climate Sensor
-------------------
+``pid`` Sensor
+--------------
 
 Additionally, the PID climate platform provides an optional sensor platform to monitor
 the calculated PID parameters to help finding good PID values.
@@ -294,6 +294,7 @@ See Also
 - Åström, K. J. and T. Hägglund (1984a), 'Automatic tuning of simple regulators',
   Proceedings of IFAC 9th World Congress, Budapest, 1867-1872
 - :doc:`/components/climate/index`
+- :doc:`/components/output/slow_pwm`
 - :apiref:`pid/pid_climate.h`
 - :apiref:`PID Autotuner <pid/pid_autotune.h>`
 - :ghedit:`Edit`

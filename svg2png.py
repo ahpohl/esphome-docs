@@ -7,13 +7,14 @@ import queue
 import sys
 
 
-to_p = Path('svg2png')
+to_p = Path("svg2png")
 to_p.mkdir(exist_ok=True)
-for f in to_p.glob('*.png'):
-    f.unlink()
 
-images = [f for f in Path('_build/html/_images/').glob('*.svg')
-          if not re.match(r'^seg[0-9A-F]{2}$', f.stem)]
+images = [
+    f
+    for f in Path("_build/html/_images/").glob("*.svg")
+    if not re.match(r"^seg[0-9A-F]{2}$", f.stem)
+]
 q = queue.Queue()
 
 
@@ -23,17 +24,23 @@ def worker():
         if item is None:
             break
 
-        to = to_p / item.with_suffix('.png').name
-        args = ['inkscape', '-z', '-e', str(to.absolute()), '-w', '800',
-                '-background', 'white', str(item.absolute())]
-        print("Running:  {}".format(' '.join(shlex.quote(x) for x in args)))
-        proc = subprocess.run(args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-        if b'Bitmap saved as' not in proc.stdout:
-            print("Error!")
-            print(proc.stdout)
-            sys.exit(1)
+        to = to_p / item.with_suffix(".png").name
+        if to.is_file():
+            q.task_done()
+            continue
+        args = [
+            "inkscape",
+            f"--export-filename={to.absolute()}",
+            "-w",
+            "800",
+            "--export-background=white",
+            str(item.absolute()),
+        ]
+        print("Running:  {}".format(" ".join(shlex.quote(x) for x in args)))
+        subprocess.check_call(args)
 
         q.task_done()
+
 
 NUM_THREADS = 8
 threads = []

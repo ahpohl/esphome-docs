@@ -3,7 +3,7 @@ Servo Component
 
 .. seo::
     :description: Instructions for setting up servos in ESPHome
-    :image: servo.png
+    :image: servo.svg
 
 The ``servo`` component allows you to use servo motors with ESPHome. Servos are
 motor controllers that contain all the electronics necessary for driving the motor and provide
@@ -55,6 +55,9 @@ Advanced Options:
 - **restore** (*Optional*, boolean): Whether to restore the state of the servo motor at startup.
   This is useful if you have an absolute servo motor and it goes back to its 0 position at startup.
   Defaults to ``false``.
+- **auto_detach_time** (*Optional*, :ref:`config-time`): The time after reaching the target value when the servo will be detached`, if set to zero, servo will not be detached. Defaults to ``0s``.
+- **transition_length** (*Optional*, :ref:`config-time`): The time needed for a full movement (-1.0 to 1.0). This will effectively limit the speed of the servo, the larger the value, the slowest the servo will move. Defaults to `` 0s``
+  This can slow down the servo to avoid loud noises or just make the movement not jerking.
 
 .. note::
 

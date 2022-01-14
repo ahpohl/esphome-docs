@@ -3,13 +3,13 @@ WiFi Signal Sensor
 
 .. seo::
     :description: Instructions for setting up WiFi signal sensors that track the RSSI connection strength value to the network.
-    :image: network-wifi.png
+    :image: network-wifi.svg
 
 The ``wifi_signal`` sensor platform allows you to read the signal
 strength of the currently connected :doc:`WiFi Access Point </components/wifi>`.
 
 The sensor value is the `"Received signal strength indication" <https://en.wikipedia.org/wiki/Received_signal_strength_indication>`__
-measured in decibels. These values are always negative and the closer they are to zero, the better the signal is.
+measured in decibel-milliwatts (dBm). These values are always negative and the closer they are to zero, the better the signal is.
 
 .. figure:: images/wifi_signal-ui.png
     :align: center

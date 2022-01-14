@@ -55,7 +55,6 @@ exposes all of the basic functions.
       name: <NAME_OF_NODE>
       platform: ESP8266
       board: esp8285
-      arduino_version: 2.4.2
 
     wifi:
       ssid: <YOUR_SSID>
@@ -71,8 +70,10 @@ exposes all of the basic functions.
       - platform: gpio
         pin:
           number: GPIO0
-          mode: INPUT_PULLUP
-          inverted: True
+          mode:
+            input: true
+            pullup: true
+          inverted: true
         name: "Sonoff Basic Button"
         on_press:
           - switch.toggle: relay
@@ -271,4 +272,4 @@ See Also
 - :doc:`sonoff_4ch`
 - :doc:`sonoff_s20`
 - `GPIO locations <https://github.com/arendst/Sonoff-Tasmota/wiki/GPIO-Locations>`__
-- `Edit this page on GitHub <https://github.com/OttoWinter/esphomedocs/blob/current/esphomeyaml/devices/sonoff_basic.rst>`__
+- `Edit this page on GitHub <https://github.com/OttoWinter/esphomedocs/blob/current/devices/sonoff_basic.rst>`__

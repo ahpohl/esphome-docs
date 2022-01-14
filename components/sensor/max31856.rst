@@ -3,7 +3,7 @@ MAX31856 Thermocouple Temperature Sensor
 
 .. seo::
     :description: Instructions for setting up MAX31856 Thermocouple temperature sensors.
-    :image: max31865.png
+    :image: max31865.jpg
 
 The ``MAX31856`` temperature sensor allows you to use your MAX31856 Thermocouple
 temperature sensor (`datasheet <https://datasheets.maximintegrated.com/en/ds/MAX31856.pdf>`__) with ESPHome
@@ -38,7 +38,7 @@ to have an :ref:`spi bus <spi>` in your configuration with both **miso_pin** and
       mosi_pin: GPIO23
 
     sensor:
-      - platform: MAX31856
+      - platform: max31856
         name: "BBQ Temperature"
         icon: "mdi:hamburger"
         cs_pin: GPIO17

@@ -83,8 +83,8 @@ using :ref:`api-homeassistant_tag_scanned_action`.
 
 .. _rdm6300-tag:
 
-NFC/RFID Tag
-------------
+``rdm6300`` Binary Sensor
+-------------------------
 
 The ``rdm6300`` binary sensor platform lets you track if an NFC/RFID tag with a given
 unique id (``uid``) is currently being detected by the RDM6300 or not.
@@ -106,7 +106,7 @@ unique id (``uid``) is currently being detected by the RDM6300 or not.
 Configuration variables:
 ************************
 
-- **uid** (**Required**, integer): The unique ID of the NFC/RFID tag.
+- **uid** (**Required**, int): The unique ID of the NFC/RFID tag.
 - **name** (**Required**, string): The name of the binary sensor.
 - **id** (*Optional*, :ref:`config-id`): Manually specify the ID used for code generation.
 - All other options from :ref:`Binary Sensor <config-binary_sensor>`.

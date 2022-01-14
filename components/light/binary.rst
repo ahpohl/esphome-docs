@@ -3,7 +3,7 @@ Binary Light
 
 .. seo::
     :description: Instructions for setting up binary ON/OFF lights in ESPHome.
-    :image: lightbulb.png
+    :image: lightbulb.svg
 
 The ``binary`` light platform creates a simple ON/OFF-only light from a
 :ref:`binary output component <output>`.
@@ -18,7 +18,12 @@ The ``binary`` light platform creates a simple ON/OFF-only light from a
     light:
       - platform: binary
         name: "Desk Lamp"
-        output: output_component1
+        output: light_output
+
+    output:
+      - id: light_output
+        platform: gpio
+        pin: GPIO16
 
 Configuration variables:
 ------------------------
