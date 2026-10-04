@@ -567,9 +567,7 @@ binary_sensor:
     name: "Front Door"
     mac_address: "XX:XX:XX:XX:XX:XX"
     bindkey: 00112233445566778899aabbccddeeff
-    open:
-      name: "Front Door Open"
-    has_light:
+    light:
       name: "Front Door Light"
     battery_level:
       name: "Front Door Battery Level"
@@ -578,9 +576,7 @@ binary_sensor:
 The platform itself is a binary sensor for the opening state (device class `opening`). A door left open past the
 device's internal timeout is reported as open; the device's reset message is ignored.
 
-- **open** (*Optional*): A second binary sensor with the same opening state. All options from
-  [Binary Sensor](/components/binary_sensor/).
-- **has_light** (*Optional*): `ON` when the ambient light is above the device's fixed threshold. The device sends it
+- **light** (*Optional*): `ON` when the ambient light is above the device's fixed threshold. The device sends it
   only when the state changes. All options from [Binary Sensor](/components/binary_sensor/).
 - **battery_level** (*Optional*): The battery level in percent. All options from [Sensor](/components/sensor/).
 
