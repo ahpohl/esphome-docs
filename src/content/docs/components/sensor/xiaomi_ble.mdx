@@ -573,12 +573,16 @@ binary_sensor:
       name: "Front Door Battery Level"
 ```
 
-The platform itself is a binary sensor for the opening state (device class `opening`). A door left open past the
-device's internal timeout is reported as open; the device's reset message is ignored.
+The platform itself is a binary sensor for the opening state (device class `opening`). A door left open longer than
+the sensor's own timeout still shows as open, and resetting the sensor (for example by changing the battery) does not
+change the state. After ESPHome restarts, the door shows as closed and the light state is unknown until the sensor
+next reports a change.
 
-- **light** (*Optional*): `ON` when the ambient light is above the device's fixed threshold. The device sends it
-  only when the state changes. All options from [Binary Sensor](/components/binary_sensor/).
-- **battery_level** (*Optional*): The battery level in percent. All options from [Sensor](/components/sensor/).
+- **light** (*Optional*, [Binary Sensor](/components/binary_sensor/)): `ON` when the ambient light is above the
+  sensor's fixed threshold. The sensor only sends it when the state changes. All options from
+  [Binary Sensor](/components/binary_sensor/).
+- **battery_level** (*Optional*, [Sensor](/components/sensor/)): The battery level in percent. All options from
+  [Sensor](/components/sensor/).
 
 ## Setting Up Devices
 
